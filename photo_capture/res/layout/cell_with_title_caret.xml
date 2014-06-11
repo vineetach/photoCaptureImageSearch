@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/cell_with_title_caret_title"
+        style="@style/SettingsCellTextLeft"
+        android:paddingLeft="20dp"
+        android:text="Placeholder" />
+
+    <TextView
+        android:id="@+id/cell_with_title_caret_text"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/ic_arrow_right_gray"
+        style="@style/SettingsCellTextRight"
+        android:paddingRight="20dp"
+        android:paddingTop="15dp" />
+
+</RelativeLayout>

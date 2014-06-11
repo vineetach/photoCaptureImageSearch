@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/EditText01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search" >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditText01"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+        
+        <ListView
+        android:id="@+id/contacts_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" 
+        android:layout_weight="1"
+        android:cacheColorHint="@null">
+    </ListView>
+    
+        <LinearLayout
+        android:id="@+id/indexer_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/section_toast_layout"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/current_letter_bubble"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/section_toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#8E8E8E"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

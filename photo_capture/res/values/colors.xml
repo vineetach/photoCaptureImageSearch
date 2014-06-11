@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paletteOrange">#eb5e19</color>
+    <color name="paletteGrey">#999</color>
+
+    <color name="tabMedium">#147aa4</color>
+    <color name="tabDark">#147aa4</color>
+    <color name="tabSelect">#156693</color>
+    <color name="tabSelect_transparent">#803CB0E8</color>
+    <color name="text_tab_selected">#FFFFFF</color>
+    <color name="text_tab_unselected">#FFFFFF</color>
+    <color name="text_light">#b4b4b4</color>
+    <color name="grey">#999999</color>
+    <color name="medium_grey">#999999</color>
+    <color name="dark_grey">#666666</color>
+    <color name="secondaryText">#666</color>
+    <color name="transparent_overlay">#1000</color>
+    <color name="transparent_blue_overlay">#7097cce2</color>
+    <color name="transparent_white_overlay">#90FFFFFF</color>
+    
+    <color name="silver">#D1D0CE</color>
+    <color name="almostWhite">#eee</color>
+    <color name="white">#FFFF</color>
+    <color name="black">#000</color>
+    <color name="light_blue">#1569C7</color>
+    <color name="buttonRed">#c64e4e</color>
+    <color name="buttonGreen">#6ebb4d</color>
+    <color name="buttonBlue">#1e9dd1</color>
+
+    <!-- Color Range for the text -->
+    <color name="score_range1">#c11717</color>
+    <color name="score_range2">#d25013</color>
+    <color name="score_range3">#ce942c</color>
+    <color name="score_range4">#81b63f</color>
+    <color name="score_range5">#1b9c33</color>
+    
+    <color name="primary_button_disabled_color">#B4CDCD</color>
+    <color name="primary_button_border_color">#0000</color>
+    <color name="primary_button_on_touch_color">#00868B</color>
+    <color name="primary_button_default_basecolor">#35AFEB</color>
+    
+    <!-- Score colors -->
+    <color name="sub_score_background_stroke_color">#ccc</color>
+    <color name="sub_score_text_color">#000</color>
+    <color name="sub_score_percentage_color">#878787</color>
+    <color name="score_overall_fraction_part_text_color">#868686</color>
+    <color name="subscore_indicator_bar_tap_title_text_color">#5F5F5F</color>
+    <color name="subscore_indicator_bar_tap_text_color">#FFF</color>
+    <color name="score_meter_background_color">#F2F2F2</color>
+    <color name="subscore_indicator_bar_background_color">#F2F2F2</color>
+    <color name="subscore_indicator_bar_background_stroke_color">#DDDCDC</color>
+    
+    
+    <color name="dashboard_reviewsites_title_color">#000</color>
+    <color name="dashboard_socialsites_title_color">#000</color>
+    <color name="review_sites_cell_num_rev_color">#147AA4</color>
+    <color name="review_sites_number_out_of_five_color">#eb5e19</color>
+    <color name="review_sites_number_out_of_five_fraction_part">#999999</color>
+    <color name="dashboard_social_sites_cell_count1Type_color">#147AA4</color>
+    <color name="dashboard_review_rating_bar_color">#eb5e19</color>
+    
+    <color name="settings_screen_background">#D1D0CE</color>
+    <color name="settings_screen_title">#666362</color>
+    
+    <color name="help_screen_top_background">#37a3cf</color>
+    <color name="help_screen_bottom_background">#e0e0e0</color>
+    <color name="help_screen_indicator_stroke_color">#bdbdbd</color>
+    <color name="help_screen_indicator_background_color">#a5cada</color>
+    <color name="help_screen_title_color">#808080</color>
+    
+    <color name="app_page_background_color">#f5f5f5</color>
+    <color name="app_panel_background_color">#fff</color>
+    
+    <color name="cells_pressed_color">#00CCFF</color>
+    <color name="text_pressed_color">#00CCFF</color>
+    
+    <color name="link_text_color">#147AA4</color>
+    <color name="social_property_text_color">#076496</color>
+    
+    <color name="header_button_pressed_state">#1e9dd1</color>
+    
+    <!-- Dashboard titles color -->
+    <color name="dashboard_title_text_color">#147aa4</color>
+    <color name="overall_score_value_color">#000</color>
+    <color name="dashboard_setting_tile_cancel_text_color">#147aa4</color>
+    <color name="new_review_text_color">#81b63f</color>
+    
+    <color name="location_name_background">#F0F6F9</color>
+    <color name="location_name_color">#70a0b3</color>
+    
+    <color name="dashboard_settings_title_color">#30A7E0</color>
+    
+    <color name="social_full_view_cell_stroke_color">#ccc</color>
+    <color name="social_full_view_cell_background_color">#f5f5f5</color>
+    
+    <color name="line_border">#cccccc</color>
+    
+    <!-- New Ones -->
+    <color name="indexer_bar_bg_color">#40000000</color>
+    <color name="indexer_bar_selected_color">#3399ff</color>
+    <color name="letter_bg_color">#1C86EE</color>
+    <color name="transparent">#00000000</color>
+    
+</resources>
