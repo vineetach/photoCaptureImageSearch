@@ -1,7 +1,6 @@
 package makemachine.android.examples;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,7 +42,6 @@ public class LocationSelectorActivity extends Activity {
     private SectionIndexer mIndexer;
     private int lastSelectedPosition = -1;
 
-    private ArrayList<String> mItems;
     private ArrayList<LocationModel> locationModels;
     private ArrayList<String> selectedModels = new ArrayList<String>();
 
