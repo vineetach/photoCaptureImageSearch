@@ -3,7 +3,11 @@ package makemachine.android.examples;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,6 +30,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PhotoCaptureExample extends Activity 
@@ -35,15 +40,30 @@ public class PhotoCaptureExample extends Activity
     protected String mImageFilePath;
     private View mRemoveImageButton;
     private View mCameraButton;
+    private View mLocation_selector_cell;
 
     protected boolean _taken;
 
     protected static final String PHOTO_TAKEN = "photo_taken";
     
-    ArrayList<String> mSelectedSources = new ArrayList<String>();
-
+    Set<String> mSelectedSources = new LinkedHashSet<String>();
+    ArrayList<String> mSelectedLocations = new ArrayList<String>();
+    
+    public static Map<String,Integer> SELECTED_SOURCE_DRAWABLE_ID = new HashMap<String,Integer>();
+    
+    //TODO:- Put the actual drawable id and source name
+    static {
+      SELECTED_SOURCE_DRAWABLE_ID.put("Facebook", R.drawable.nps_10);
+      SELECTED_SOURCE_DRAWABLE_ID.put("Twitter", R.drawable.nps_2);
+      SELECTED_SOURCE_DRAWABLE_ID.put("Google+", R.drawable.nps_3);
+    }
+    
     private static final int LOAD_IMAGE_FROM_GALLERY_REQUEST_CODE = 1;
     private static final int TAKE_PICTURE_FROM_CAMERA_REQUEST_CODE = 2;
+    private static final int LOCATION_SELECTOR_REQUEST_CODE = 3;
+    
+    public static final String SELECTED_NO_OF_LOCATIONS = "selected_no_of_locations";
+    public static final String SELECTED_LOCATION_ICON_IDS = "selected_location_icon_ids";
 
     @Override
     public void onCreate(Bundle savedInstanceState) 
@@ -66,13 +86,18 @@ public class PhotoCaptureExample extends Activity
 
         Button shareButton = ( Button ) findViewById( R.id.shareButton );
         shareButton.setOnClickListener( new ShareButtonClickHandler() );
+        
+        mLocation_selector_cell = findViewById(R.id.location_selector_cell);
+        mLocation_selector_cell.setOnClickListener(new LocationSelectorCLickHandler());
 
         mImageFilePath = Environment.getExternalStorageDirectory() + "/images/make_machine_example.jpg";
         
+        //TODO: Read sourceName from config
         View source1_container = findViewById(R.id.source1_container);
         SourceContainerClickHandler source1ClickHandler = new SourceContainerClickHandler();
         source1ClickHandler.sourceTickViewId = R.id.source1_tick_icon;
         source1ClickHandler.sourceImageViewId = R.id.source1_icon;
+        source1ClickHandler.sourceName = "Facebook";
         source1_container.setOnClickListener(source1ClickHandler);
         setGrayCaleToIcon(R.id.source1_icon);
         
@@ -80,6 +105,7 @@ public class PhotoCaptureExample extends Activity
         SourceContainerClickHandler source2ClickHandler = new SourceContainerClickHandler();
         source2ClickHandler.sourceTickViewId = R.id.source2_tick_icon;
         source2ClickHandler.sourceImageViewId = R.id.source2_icon;
+        source2ClickHandler.sourceName = "Twitter";
         source2_container.setOnClickListener(source2ClickHandler);
         setGrayCaleToIcon(R.id.source2_icon);
         
@@ -87,6 +113,7 @@ public class PhotoCaptureExample extends Activity
         SourceContainerClickHandler source3ClickHandler = new SourceContainerClickHandler();
         source3ClickHandler.sourceTickViewId = R.id.source3_tick_icon;
         source3ClickHandler.sourceImageViewId = R.id.source3_icon;
+        source3ClickHandler.sourceName = "Google+";
         source3_container.setOnClickListener(source3ClickHandler);
         setGrayCaleToIcon(R.id.source3_icon);
     }
@@ -101,7 +128,25 @@ public class PhotoCaptureExample extends Activity
 
         @Override
         public void onClick(View v) {
-            // TODO Auto-generated method stub
+            //TODO Auto-generated method stub
+            //mSelectedLocations, add the logic if config has single location then don't send it
+            //Make the api call
+            Intent intent = new Intent(PhotoCaptureExample.this, SocialPostSentActivity.class);
+            ArrayList<Integer> drawableIds = new ArrayList<Integer>();
+            for (String selectedSource : mSelectedSources) {
+                drawableIds.add(SELECTED_SOURCE_DRAWABLE_ID.get(selectedSource));
+            }
+            intent.putIntegerArrayListExtra(SELECTED_LOCATION_ICON_IDS, drawableIds);
+            startActivity(intent);
+            //TODO: Finish this activity and start the other activity
+        }
+    }
+    
+    public class LocationSelectorCLickHandler implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            startActivityForResult(new Intent(PhotoCaptureExample.this, LocationSelectorActivity.class), LOCATION_SELECTOR_REQUEST_CODE);
         }
     }
     
@@ -132,7 +177,7 @@ public class PhotoCaptureExample extends Activity
                 matrix.setSaturation(1);
                 ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
                 iconView.setColorFilter(filter);
-                view.setBackgroundResource(R.color.transparent_blue_overlay);
+                view.setBackgroundResource(R.color.selected_social_post_source);
             }
         }
     }
@@ -153,7 +198,6 @@ public class PhotoCaptureExample extends Activity
             mRemoveImageButton.setVisibility(View.INVISIBLE);
             mCameraButton.setVisibility(View.VISIBLE);
         }
-
     }
 
     protected void startCameraActivity() {
@@ -176,17 +220,25 @@ public class PhotoCaptureExample extends Activity
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) 
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == TAKE_PICTURE_FROM_CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             onPhotoTaken();
         } else if(requestCode == LOAD_IMAGE_FROM_GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             onPhotoSelectedFromGallery(data);
+        } else if (requestCode == LOCATION_SELECTOR_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            ArrayList<String> selectedModels = data.getStringArrayListExtra(SELECTED_NO_OF_LOCATIONS);
+            mSelectedLocations.clear();
+            mSelectedLocations.addAll(selectedModels);
+            
+            if(selectedModels.size() > 0) {
+                TextView selectedLocationText = (TextView)findViewById(R.id.selectedLocationsText);
+                //TODO:- Move to strings.xml
+                selectedLocationText.setText("Selected Locations " + selectedModels.size());
+            }
         }
     }
 
-    protected void onPhotoTaken()
-    {
+    protected void onPhotoTaken() {
         try {
             _taken = true;
 

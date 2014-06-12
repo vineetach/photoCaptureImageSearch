@@ -95,10 +95,12 @@
     
     <color name="line_border">#cccccc</color>
     
-    <!-- New Ones -->
+    <!-- New Ones Append it in the real project -->
     <color name="indexer_bar_bg_color">#40000000</color>
     <color name="indexer_bar_selected_color">#3399ff</color>
     <color name="letter_bg_color">#1C86EE</color>
     <color name="transparent">#00000000</color>
+    <color name="selected_social_post_source">#EBFEE3</color>
+    <color name="location_selector_text_color">#1E6E98</color>
     
 </resources>

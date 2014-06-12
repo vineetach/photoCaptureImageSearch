@@ -54,7 +54,7 @@
     
     <dimen name="empty_data_warning_image_paddingTop">110dp</dimen>
     
-    <!-- New ones -->
+    <!-- New ones Append it in the real project-->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     

@@ -36,7 +36,7 @@ public final class R {
         public static final int help_screen_indicator_stroke_color=0x7f040035;
         public static final int help_screen_title_color=0x7f040037;
         public static final int help_screen_top_background=0x7f040033;
-        /**  New Ones 
+        /**  New Ones Append it in the real project 
          */
         public static final int indexer_bar_bg_color=0x7f040049;
         public static final int indexer_bar_selected_color=0x7f04004a;
@@ -46,6 +46,7 @@ public final class R {
         public static final int link_text_color=0x7f04003c;
         public static final int location_name_background=0x7f040043;
         public static final int location_name_color=0x7f040044;
+        public static final int location_selector_text_color=0x7f04004e;
         public static final int medium_grey=0x7f04000a;
         public static final int new_review_text_color=0x7f040042;
         public static final int overall_score_value_color=0x7f040040;
@@ -68,6 +69,7 @@ public final class R {
         public static final int score_range4=0x7f04001b;
         public static final int score_range5=0x7f04001c;
         public static final int secondaryText=0x7f04000c;
+        public static final int selected_social_post_source=0x7f04004d;
         public static final int settings_screen_background=0x7f040031;
         public static final int settings_screen_title=0x7f040032;
         public static final int silver=0x7f040010;
@@ -98,7 +100,7 @@ public final class R {
         public static final int white=0x7f040012;
     }
     public static final class dimen {
-        /**  New ones 
+        /**  New ones Append it in the real project
          */
         public static final int activity_horizontal_margin=0x7f05002c;
         public static final int activity_vertical_margin=0x7f05002d;
@@ -155,65 +157,80 @@ public final class R {
         public static final int badge_circle_green=0x7f020000;
         public static final int current_letter_bubble=0x7f020001;
         public static final int edit_box=0x7f020002;
-        public static final int ic_arrow_right_gray=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int icon=0x7f020005;
-        public static final int icon_search=0x7f020006;
-        public static final int letterslist_bg=0x7f020007;
-        public static final int nps_10=0x7f020008;
-        public static final int nps_2=0x7f020009;
-        public static final int nps_3=0x7f02000a;
-        public static final int postingedit_box=0x7f02000b;
-        public static final int primary_button=0x7f02000c;
-        public static final int primary_button_default=0x7f02000d;
-        public static final int primary_button_disabled=0x7f02000e;
-        public static final int primary_button_pressed=0x7f02000f;
-        public static final int scrollbar_vertical_thumb=0x7f020010;
-        public static final int scrollbar_vertical_track=0x7f020011;
-        public static final int section_toast=0x7f020012;
+        public static final int ic_action_remove=0x7f020003;
+        public static final int ic_action_search=0x7f020004;
+        public static final int ic_arrow_right_gray=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int icon=0x7f020007;
+        public static final int icon_search=0x7f020008;
+        public static final int letterslist_bg=0x7f020009;
+        public static final int nps_10=0x7f02000a;
+        public static final int nps_2=0x7f02000b;
+        public static final int nps_3=0x7f02000c;
+        public static final int postingedit_box=0x7f02000d;
+        public static final int primary_button=0x7f02000e;
+        public static final int primary_button_default=0x7f02000f;
+        public static final int primary_button_disabled=0x7f020010;
+        public static final int primary_button_pressed=0x7f020011;
+        public static final int scrollbar_vertical_thumb=0x7f020012;
+        public static final int scrollbar_vertical_track=0x7f020013;
+        public static final int section_toast=0x7f020014;
+        public static final int social_post_ui_box=0x7f020015;
     }
     public static final class id {
-        public static final int EditText01=0x7f080002;
-        public static final int button=0x7f080009;
-        public static final int camera_button=0x7f080017;
+        public static final int EditText01=0x7f080004;
+        public static final int button=0x7f08000b;
+        public static final int camera_button=0x7f08001c;
         public static final int cell_with_title_caret_text=0x7f080001;
         public static final int cell_with_title_caret_title=0x7f080000;
-        public static final int check=0x7f08000b;
-        public static final int contacts_list=0x7f080003;
-        public static final int field=0x7f080007;
-        public static final int image=0x7f080008;
-        public static final int indexer_layout=0x7f080004;
-        public static final int label=0x7f08000a;
-        public static final int location_share_cell=0x7f080018;
-        public static final int postingEditText=0x7f080015;
-        public static final int removeImageButton=0x7f080016;
-        public static final int section_toast_layout=0x7f080005;
-        public static final int section_toast_text=0x7f080006;
-        public static final int shareButton=0x7f080019;
-        public static final int source1_container=0x7f08000c;
-        public static final int source1_icon=0x7f08000d;
-        public static final int source1_tick_icon=0x7f08000e;
-        public static final int source2_container=0x7f08000f;
-        public static final int source2_icon=0x7f080010;
-        public static final int source2_tick_icon=0x7f080011;
-        public static final int source3_container=0x7f080012;
-        public static final int source3_icon=0x7f080013;
-        public static final int source3_tick_icon=0x7f080014;
+        public static final int check=0x7f080003;
+        public static final int contacts_list=0x7f080005;
+        public static final int field=0x7f080009;
+        public static final int image=0x7f08000a;
+        public static final int indexer_layout=0x7f080006;
+        public static final int label=0x7f080002;
+        public static final int location_selector_cell=0x7f08001d;
+        public static final int postingEditText=0x7f08001a;
+        public static final int removeImageButton=0x7f08001b;
+        public static final int section_toast_layout=0x7f080007;
+        public static final int section_toast_text=0x7f080008;
+        public static final int selectedLocationsText=0x7f08001e;
+        public static final int selected_source_container=0x7f08000d;
+        public static final int shareButton=0x7f08001f;
+        public static final int social_post_more_button=0x7f08000e;
+        public static final int social_post_sent_text=0x7f08000c;
+        public static final int source1_container=0x7f080011;
+        public static final int source1_icon=0x7f080012;
+        public static final int source1_tick_icon=0x7f080013;
+        public static final int source2_container=0x7f080014;
+        public static final int source2_icon=0x7f080015;
+        public static final int source2_tick_icon=0x7f080016;
+        public static final int source3_container=0x7f080017;
+        public static final int source3_icon=0x7f080018;
+        public static final int source3_tick_icon=0x7f080019;
+        public static final int source_icon=0x7f08000f;
+        public static final int source_tick_icon=0x7f080010;
     }
     public static final class layout {
         public static final int cell_with_title_caret=0x7f030000;
-        public static final int location_selector_ui=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int rowbuttonlayout=0x7f030003;
-        public static final int social_posting_ui=0x7f030004;
+        public static final int location_selection_cell=0x7f030001;
+        public static final int location_selector_ui=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int social_post_sent_ui=0x7f030004;
+        public static final int social_post_source_icon_layout=0x7f030005;
+        public static final int social_posting_ui=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f060001;
         public static final int hello=0x7f060000;
     }
     public static final class style {
-        public static final int SettingsCellTextLeft=0x7f070001;
-        public static final int SettingsCellTextRight=0x7f070002;
-        public static final int SettingsCellTextStyle=0x7f070000;
+        public static final int AppBaseTheme=0x7f070000;
+        /**  All customizations that are NOT specific to a particular API-level can go here. 
+         */
+        public static final int AppTheme=0x7f070001;
+        public static final int SettingsCellTextLeft=0x7f070003;
+        public static final int SettingsCellTextRight=0x7f070004;
+        public static final int SettingsCellTextStyle=0x7f070002;
     }
 }
